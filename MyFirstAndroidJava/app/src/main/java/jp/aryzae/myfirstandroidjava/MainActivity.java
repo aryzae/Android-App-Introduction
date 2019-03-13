@@ -3,6 +3,7 @@ package jp.aryzae.myfirstandroidjava;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "" + result); // 3
 
         chapter4_32_replace();
+        chapter4_40();
     }
 
     private int sum(int a, int b) {
@@ -83,5 +85,14 @@ public class MainActivity extends AppCompatActivity {
         // "World"を"Android"に置き換えた文字列を作る
         String helloAndroid = helloWorld.replace("World", "Android");
         Log.d("MainActivity", helloAndroid); // "Hello, Android!"
+    }
+
+    private void chapter4_40() {
+        // レイアウトからTextViewを取り出す
+        TextView hello = findViewById(R.id.textview_hello);
+        // TextViewにセットされている文字を抜き出す
+        String text = hello.getText().toString();
+        // ログに出力する
+        Log.d("MainActivity", text);
     }
 }
