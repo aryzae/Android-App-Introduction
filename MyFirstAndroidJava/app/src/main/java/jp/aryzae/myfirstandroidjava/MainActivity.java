@@ -1,5 +1,7 @@
 package jp.aryzae.myfirstandroidjava;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -94,5 +96,11 @@ public class MainActivity extends AppCompatActivity {
         String text = hello.getText().toString();
         // ログに出力する
         Log.d("MainActivity", text);
+        // 画面に表示するデータを用意する
+        String text2 = "Hello, Android!";
+        // TextViewにデータをセットする
+        hello.setText(text2);
+        hello.setTextColor(Color.parseColor("#FF0000"));
+        hello.setTypeface(Typeface.DEFAULT_BOLD);
     }
 }
