@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private int maxNumber = 75;
     // 数字の履歴
     private ArrayList<String> history = new ArrayList<>();
+
     // 最大値の入力欄
     private EditText maxNumberEditText;
     // 最大値の設定ボタン
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private Button nextNumberButton;
     // 現在の数字を表示するTextView
     private TextView currentNumberTextView;
+    // 履歴を表示するTextView
+    private TextView historyTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         registerMaxNumberButton = findViewById(R.id.register_max_number);
         nextNumberButton = findViewById(R.id.next_number);
         currentNumberTextView = findViewById(R.id.current_number);
+        historyTextView = findViewById(R.id.history);
 
         // 最大値の初期値をEditTextにセットする
         maxNumberEditText.setText("" + maxNumber);
@@ -81,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         // 履歴を残す
         history.add(nextNumberStr);
+
+        // 履歴を表示する
+        historyTextView.setText(history.toString());
         Log.d("MainActivity", history.toString());
     }
 
